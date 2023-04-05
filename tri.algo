@@ -1,0 +1,25 @@
+
+PROCEDURE Tri_insertion(VAR arr:ARRAY_OF INTEGER; n:INTEGER )
+   
+   // Déclération des attributs du tableau
+   i,j: INTEGER;
+BEGIN
+    FOR j FROM 2 TO n-1 DO 
+
+        // création d'un auxiliaire nommé elt
+        elt:=arr[i];
+        i:=j;
+
+        //La partit décalage des cates dans le tableau
+        WHILE((arr[i]>elt) AND (i>0)) DO
+            arr[i]:=arr[i-1];
+            i:=i-1;
+        END_WHILE
+
+        // La parti insertion des cates dans le tableau
+        arr[i]:=elt;
+    END_FOR
+END
+    
+
+
